@@ -25,4 +25,8 @@ def create_app():
     def inject_teams():
         return dict(teams=KBO_TEAMS)
 
+    # 티켓 페이지(구단 선택 → 리스트 페이지) 라우트 연결
+    from .views import ticket_views
+    app.register_blueprint(ticket_views.bp)
+
     return app
